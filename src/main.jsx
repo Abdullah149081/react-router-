@@ -3,23 +3,47 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import About from "./components/About/About";
+import Contacts from "./components/Contacts/Contacts";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import First from "./components/First/First";
+import Home from "./components/Home/Home";
 import "./index.css";
-import Contacts from "./components/Contacts/contacts";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App></App>,
+//     errorElement: <ErrorPage></ErrorPage>,
+//   },
+//   {
+//     path: "/about",
+//     element: <About></About>,
+//   },
+//   {
+//     path:"/contact",
+//     element:<Contacts></Contacts>
+//   },
+// ]);
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <Home></Home>,
     errorElement: <ErrorPage></ErrorPage>,
-  },
-  {
-    path: "/about",
-    element: <About></About>,
-  },
-  {
-    path:"/contact",
-    element:<Contacts></Contacts>
+    children: [
+      {
+        path: "/",
+        element: <First></First>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: <Contacts></Contacts>,
+      },
+    ],
   },
 ]);
 
