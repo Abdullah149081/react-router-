@@ -7,8 +7,9 @@ const Header = () => {
       <nav className="text-2xl  flex gap-4 justify-center text-center my-5">
         <div className="font-medium flex gap-4">
           <Link to="/">Home</Link>
+          <Link to="/user">User</Link>
           <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link> 
+          <Link to="/contact">Contact</Link>
         </div>
       </nav>
     </div>
