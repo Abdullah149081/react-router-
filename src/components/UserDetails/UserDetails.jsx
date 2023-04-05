@@ -1,9 +1,13 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
   const user = useLoaderData();
   const { name, phone, email, website, company, address } = user;
+  const navigate = useNavigate();
+  const handlerGoBck = () => {
+    navigate(-1);
+  };
 
   return (
     <div className="md:px-32">
@@ -17,7 +21,9 @@ const UserDetails = () => {
         <p className="text-2xl text-pink-500 font-medium">Website: {website}.</p>
         <p className="text-2xl text-pink-500 font-medium">Company: {company.name}.</p>
         <p className="text-2xl text-pink-500 font-medium">Address: {Object.values(address).slice(0, 4).join(" , ")}.</p>
+        <button onClick={() => handlerGoBck()}>Go back</button>
       </div>
+      
     </div>
   );
 };
