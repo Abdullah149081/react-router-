@@ -7,6 +7,8 @@ import Contacts from "./components/Contacts/Contacts";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import First from "./components/First/First";
 import Home from "./components/Home/Home";
+import PostDetails from "./components/PostDetails/PostDetails";
+import Posts from "./components/Posts/Posts";
 import User from "./components/User/User";
 import UserDetails from "./components/UserDetails/UserDetails";
 import "./index.css";
@@ -46,6 +48,16 @@ const router = createBrowserRouter([
         path: "user/:userID",
         element: <UserDetails></UserDetails>,
         loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userID}`),
+      },
+      {
+        path: "posts",
+        element: <Posts></Posts>,
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
+      },
+      {
+        path: "posts/:postsID",
+        element: <PostDetails></PostDetails>,
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postsID}`),
       },
       {
         path: "about",

@@ -14,8 +14,8 @@ const UserDetails = () => {
           Email: <span className="cursor-pointer">{email}</span>
         </p>
         <p className="text-2xl text-pink-500 font-medium">Phone: {phone}</p>
-        <p className="text-2xl text-pink-500 font-medium">Website: {website}</p>
-        <p className="text-2xl text-pink-500 font-medium">Company: {company.name}</p>
+        <p className="text-2xl text-pink-500 font-medium">Website: {website}.</p>
+        <p className="text-2xl text-pink-500 font-medium">Company: {company.name}.</p>
         <p className="text-2xl text-pink-500 font-medium">Address: {Object.values(address).slice(0, 4).join(" , ")}.</p>
       </div>
     </div>
